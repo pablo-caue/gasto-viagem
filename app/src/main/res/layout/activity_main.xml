@@ -1,85 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:padding="16dp"
     tools:context=".MainActivity">
 
 
     <EditText
+        android:inputType="numberDecimal"
         android:id="@+id/edit_distance"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:autofillHints="emailAddress"
-        android:hint="@string/distance"
-        android:inputType="numberDecimal" />
+        android:hint="@string/distance" />
 
     <TextView
+        android:id="@+id/text_distance"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/edit_distance"
         android:gravity="center"
         android:text="@string/total_kilometers" />
 
     <EditText
+        android:inputType="numberDecimal"
+        android:layout_marginTop="32dp"
         android:id="@+id/edit_price"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:autofillHints="password"
-        android:hint="@string/price"
-        android:inputType="numberDecimal" />
+        android:layout_below="@id/text_distance"
+        android:hint="@string/price" />
 
     <TextView
+
+        android:id="@+id/text_price"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/edit_price"
         android:gravity="center"
         android:text="@string/price_per_liter" />
 
     <EditText
-        android:id="@+id/edit_liter"
+        android:inputType="numberDecimal"
+        android:layout_marginTop="32dp"
+        android:id="@+id/edit_autonomy"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:autofillHints="name"
-        android:hint="@string/autonomy"
-        android:inputType="numberDecimal" />
+        android:layout_below="@id/text_price"
+        android:hint="@string/autonomy" />
 
     <TextView
+
+        android:id="@+id/text_autonomy"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/edit_autonomy"
         android:gravity="center"
         android:text="@string/kilometers_per_liter" />
 
     <TextView
+        android:id="@+id/text_total_cust"
+        android:layout_marginTop="36dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:gravity="center"
         android:text="@string/spent"
+        android:gravity="center"
+        android:layout_below="@id/text_autonomy"
         android:textSize="16sp" />
 
     <TextView
-        android:id="@+id/text_result"
+        android:id="@+id/text_total"
+        android:textColor="#073CA5"
+        android:gravity="center"
+        android:textSize="32sp"
+        android:layout_marginTop="16dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:gravity="center"
         android:text="@string/total"
-        android:textColor="#353F7A"
-        android:textSize="32sp" />
+        android:layout_below="@id/text_total_cust" />
 
     <Button
+        android:backgroundTint="@color/teal_700"
+        android:text="@string/calculate"
+        android:layout_marginTop="32dp"
         android:id="@+id/button_calculate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="@color/teal_200"
-        android:padding="8dp"
-        android:text="@string/calculate"
-        android:textSize="16sp" />
+        android:layout_below="@id/text_total" />
 
-
-</LinearLayout>
+</RelativeLayout>

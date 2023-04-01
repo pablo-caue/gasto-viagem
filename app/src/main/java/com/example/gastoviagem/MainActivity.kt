@@ -28,19 +28,19 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun isValid(): Boolean {
         return (binding.editDistance.text.toString() != "" &&
-                binding.editLiter.text.toString() != "" &&
+                binding.editAutonomy.text.toString() != "" &&
                 binding.editPrice.text.toString() != "" &&
-                binding.editLiter.text.toString().toFloat() != 0f)
+                binding.editAutonomy.text.toString().toFloat() != 0f)
     }
 
 
     private fun calculate() {
         if (isValid()){
             val distance = binding.editDistance.text.toString().toFloat()
-            val liter = binding.editLiter.text.toString().toFloat()
+            val liter = binding.editAutonomy.text.toString().toFloat()
             val price = binding.editPrice.text.toString().toFloat()
             val totalValue = distance * price / liter
-            binding.textResult.text = "R$ ${"%.2f".format(totalValue)}"
+            binding.textTotal.text = "R$ ${"%.2f".format(totalValue)}"
         }else{
             Toast.makeText(this,R.string.wrong_data,Toast.LENGTH_SHORT).show()
         }
